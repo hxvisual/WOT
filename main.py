@@ -59,6 +59,8 @@ def logo():
 
 	if LATEST_VERSION:
 		status = Fore.GREEN + "LATEST"
+	elif LATEST_VERSION == None:
+		status = Fore.YELLOW + "ERROR!"
 	else:
 		status = Fore.RED + "UPDATE"
 
@@ -119,6 +121,8 @@ def run():
 
 	if check_version():
 		LATEST_VERSION = False
+	elif check_version() == None:
+		LATEST_VERSION = None
 	
 	while True:
 		clear_console()

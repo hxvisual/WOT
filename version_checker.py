@@ -18,4 +18,4 @@ def check_version():
             else:
                 return False
     except Exception:
-        return "error"
+        return None
