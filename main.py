@@ -12,11 +12,13 @@ init(autoreset=True)
 
 PATH = os.path.dirname(os.path.abspath(__file__))
 
-ELEMENT_MENU = 1
+ELEMENT_MENU = 3
 ACTIVE = False
 LATEST_VERSION = True
 
 ELEMENTS = [
+	[Fore.BLUE + "Установить Windows 10", 								[f"{PATH}/TWEAKS/ps/Reinstall 1.ps1"], True],
+	[Fore.BLUE + "Установить Windows 11", 								[f"{PATH}/TWEAKS/ps/Reinstall 2.ps1"], True],
 	[Fore.RED + "Разрешить скрипты (при первом запуске!)\n", 				[f"{PATH}/TWEAKS/Allow Scripts.cmd", f"{PATH}/TWEAKS/ps/UAC.ps1"]],
 
 	["1. Проверить активацию", 												[f"{PATH}/TWEAKS/sc/Activation.url"]],
