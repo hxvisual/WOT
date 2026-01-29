@@ -37,7 +37,7 @@ ELEMENTS = [
 	["14. Отключить изоляцию ядра", 										[f"{PATH}/TWEAKS/sc/Core Isolation.url"]],
 	["15. Удалить Edge", 													[f"{PATH}/TWEAKS/ps/Edge.ps1"]],
 	["16. Удалить мусор из Windows", 										[f"{PATH}/TWEAKS/ps/Bloatware.ps1"]],
-	["17. Настройки реестра", 												[f"{PATH}/TWEAKS/ps/Background Apps.ps1", f"{PATH}/TWEAKS/ps/Gamebar.ps1", f"{PATH}/TWEAKS/ps/Msi Mode.ps1", f"{PATH}/TWEAKS/ps/Start Menu Taskbar Clean.ps1", f"{PATH}/TWEAKS/ps/Copilot.ps1", f"{PATH}/TWEAKS/ps/Widgets.ps1", f"{PATH}/TWEAKS/ps/Power Plan.ps1", f"{PATH}/TWEAKS/ps/Timer Resolution.ps", f"{PATH}/TWEAKS/ps/Signout Lockscreen.ps1", f"{PATH}/TWEAKS/ps/Mpo.ps1", f"{PATH}/TWEAKS/ps/Fso.ps1", f"{PATH}/TWEAKS/ps/Registry.ps1"]],
+	["17. Настройки реестра", 												[f"{PATH}/TWEAKS/ps/Background Apps.ps1", f"{PATH}/TWEAKS/ps/Gamebar.ps1", f"{PATH}/TWEAKS/ps/Msi Mode.ps1", f"{PATH}/TWEAKS/ps/Start Menu Taskbar Clean.ps1", f"{PATH}/TWEAKS/ps/Copilot.ps1", f"{PATH}/TWEAKS/ps/Widgets.ps1", f"{PATH}/TWEAKS/ps/Power Plan.ps1", f"{PATH}/TWEAKS/ps/Timer Resolution.ps1", f"{PATH}/TWEAKS/ps/Signout Lockscreen.ps1", f"{PATH}/TWEAKS/ps/Mpo.ps1", f"{PATH}/TWEAKS/ps/Fso.ps1", f"{PATH}/TWEAKS/ps/Registry.ps1"]],
 	["18. Отключить точку восстановления", 									[f"{PATH}/TWEAKS/sc/Restore Point.lnk"]],
 	["19. " + Fore.GREEN + "NVIDIA HDCP", 									[f"{PATH}/TWEAKS/ps/Hdcp.ps1"]],
 	["20. " + Fore.GREEN + "NVIDIA P0 State", 								[f"{PATH}/TWEAKS/ps/P0 State Nvidia.ps1"]],

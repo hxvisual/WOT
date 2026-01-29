@@ -216,6 +216,4 @@ Remove-Item "$env:SystemDrive\Windows\SetTimerResolutionService.cs" -ErrorAction
 New-Service -Name "Set Timer Resolution Service" -BinaryPathName "$env:SystemDrive\Windows\SetTimerResolutionService.exe" -ErrorAction SilentlyContinue | Out-Null
 Set-Service -Name "Set Timer Resolution Service" -StartupType Auto -ErrorAction SilentlyContinue | Out-Null
 Set-Service -Name "Set Timer Resolution Service" -Status Running -ErrorAction SilentlyContinue | Out-Null
-# start taskmanager
-Start-Process taskmgr.exe
 exit
