@@ -1,2 +1,2 @@
 VERSION = "1.0.0"
-GITHUB_REPO = "hxvisual/WOT"
+GITHUB_REPO = "hxvisual/wot"

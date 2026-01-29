@@ -56,9 +56,8 @@ def clear_input_buffer():
 
 def logo():
 	status = ""
-	if LATEST_VERSION == "ERROR":
-		status = Fore.YELLOW + "ERROR!"
-	elif LATEST_VERSION:
+
+	if LATEST_VERSION:
 		status = Fore.GREEN + "LATEST"
 	else:
 		status = Fore.RED + "UPDATE"
@@ -111,7 +110,6 @@ def start_script(path, show_console=False):
 		else:
 			os.startfile(p)
 
-
 	ACTIVE = False
 	clear_input_buffer()
 
@@ -121,9 +119,7 @@ def run():
 
 	if check_version():
 		LATEST_VERSION = False
-	elif check_version() == None:
-		LATEST_VERSION = "ERROR"
-
+	
 	while True:
 		clear_console()
 		menu(ELEMENT_MENU)

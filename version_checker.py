@@ -6,7 +6,7 @@ from config import VERSION, GITHUB_REPO
 def check_version():
     try:
         url = f"https://api.github.com/repos/{GITHUB_REPO}/releases/latest"
-        response = requests.get(url)
+        response = requests.get(url, timeout=5)
         
         if response.status_code == 200:
             latest_release = response.json()
@@ -15,5 +15,7 @@ def check_version():
             if latest_version != VERSION:
                 webbrowser.open(latest_release['html_url'])
                 return True
+            else:
+                return False
     except Exception:
-        return False
+        return "error"
