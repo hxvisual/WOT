@@ -12,14 +12,15 @@ init(autoreset=True)
 
 PATH = os.path.dirname(os.path.abspath(__file__))
 
-ELEMENT_MENU = 3
+ELEMENT_MENU = 2
 ACTIVE = False
 LATEST_VERSION = True
 
 ELEMENTS = [
-	[Fore.BLUE + "Установить Windows 10", 								[f"{PATH}/TWEAKS/ps/Reinstall 1.ps1"], True],
-	[Fore.BLUE + "Установить Windows 11", 								[f"{PATH}/TWEAKS/ps/Reinstall 2.ps1"], True],
 	[Fore.RED + "Разрешить скрипты (при первом запуске!)\n", 				[f"{PATH}/TWEAKS/Allow Scripts.cmd", f"{PATH}/TWEAKS/ps/UAC.ps1"]],
+
+	[Fore.GREEN + "Установка программ\n", 									[f"{PATH}/TWEAKS/wpi.exe"]],
+
 
 	["1. Проверить активацию", 												[f"{PATH}/TWEAKS/sc/Activation.url"]],
 	["2. Синхронизация", 													[f"{PATH}/TWEAKS/sc/Remember Sync.url"]],
@@ -69,6 +70,8 @@ def logo():
 	print(Back.GREEN + Fore.BLACK + "⚡ WINDOWS OPTIMIZATION TOOL ⚡")
 	print(" "*7 + "by t.me/heksaw")
 	print(" "*7 + f"{VERSION} · {status}")
+	print()
+	print(" "*1 + Fore.RED + "ДОЛЖНА БЫТЬ АНГЛ. РАСКЛАДКА!")
 	print()
 	print(" "*9 + Fore.CYAN + "Управление:")
 	print(" "*10 + "W - вверх")
