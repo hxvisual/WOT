@@ -41,14 +41,7 @@
     }
     }
 
-
-$apiUrl = "https://api.github.com/repos/Flowseal/zapret-discord-youtube/releases/latest"
-$releaseInfo = Invoke-RestMethod -Uri $apiUrl -UseBasicParsing
-$asset = $releaseInfo.assets | Where-Object { $_.name -like "*.rar" } | Select-Object -First 1
-$downloadUrl = $asset.browser_download_url
-
-
 Clear-Host
-Write-Host "Installing: Zapret . . ."
-Get-FileFromWeb -URL $downloadUrl -File "$env:TEMP\zapret.rar"
-Start-Process "$env:TEMP\zapret.rar"
+Write-Host "Installing: Python . . ."
+Get-FileFromWeb -URL "https://www.python.org/ftp/python/3.14.2/python-3.14.2-amd64.exe" -File "$env:TEMP\Python.exe"
+Start-Process "$env:TEMP\Python.exe"

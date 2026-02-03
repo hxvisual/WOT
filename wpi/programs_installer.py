@@ -9,14 +9,13 @@ init(autoreset=True)
 
 PATH = os.path.dirname(os.path.abspath(__file__))
 
-ELEMENT_MENU = 4
+ELEMENT_MENU = 3
 ACTIVE = False
 
 ELEMENTS = [
-	[Fore.RED + "Разрешить скрипты (при первом запуске!)\n", 	f"{PATH}/PROGRAMS/Allow Scripts.cmd"],
 	[Fore.BLUE + "Установить Windows 10", 						f"{PATH}/PROGRAMS/Reinstall 1.ps1"],
 	[Fore.BLUE + "Установить Windows 11", 						f"{PATH}/PROGRAMS/Reinstall 2.ps1"],
-	[Fore.GREEN + "zapret + 7z\n", 								f"{PATH}/PROGRAMS/zapret.ps1"],
+	[Fore.GREEN + "Установить zapret\n", 						f"{PATH}/PROGRAMS/zapret.ps1"],
 	["1. Google Chrome", 										f"{PATH}/PROGRAMS/Google Chrome.ps1"],
 	["2. Discord", 												f"{PATH}/PROGRAMS/Discord.ps1"],
 	["3. Telegram", 											f"{PATH}/PROGRAMS/Telegram.ps1"],
@@ -24,8 +23,11 @@ ELEMENTS = [
 	["5. Happ", 												f"{PATH}/PROGRAMS/Happ.ps1"],
 	["6. VLC", 													f"{PATH}/PROGRAMS/VLC.ps1"],
 	["7. qBittorrent", 											f"{PATH}/PROGRAMS/qBittorrent.ps1"],
-	["8. StartAllBack (win 11)", 								f"{PATH}/PROGRAMS/StartAllBack.ps1"],
-	["9. Revo Uninstaller", 									f"{PATH}/PROGRAMS/Revo Uninstaller.ps1"],
+	["8. Python", 												f"{PATH}/PROGRAMS/Python.ps1"],
+	["9. Git", 													f"{PATH}/PROGRAMS/Git.ps1"],
+	["10. VS Code", 											f"{PATH}/PROGRAMS/VSCode.ps1"],
+	["11. StartAllBack (win 11)", 								f"{PATH}/PROGRAMS/StartAllBack.ps1"],
+	["12. Revo Uninstaller", 									f"{PATH}/PROGRAMS/Revo Uninstaller.ps1"],
 ]
 
 def clear_console():
@@ -35,24 +37,9 @@ def clear_input_buffer():
 	while msvcrt.kbhit():
 		msvcrt.getch()
 
-def logo():
-	print(Back.GREEN + Fore.BLACK + "⚡ WINDOWS PROGRAMS INSTALLER ⚡")
-	print(" "*8 + "by t.me/heksaw")
-	print()
-	print(" "*2 + Fore.RED + "ДОЛЖНА БЫТЬ АНГЛ. РАСКЛАДКА!")
-	print()
-	print(" "*9 + Fore.CYAN + "Управление:")
-	print(" "*10 + "W - вверх")
-	print(" "*10 + "S - вниз")
-	print(" "*6 + "Enter - запустить")
-	print(" "*9 + "Esc - выход")
-	print("-"*30)
-	print()
 
 def menu(element):
 	global ACTIVE
-
-	logo()
 
 	for i in range(len(ELEMENTS)):
 		if i == element and ACTIVE:

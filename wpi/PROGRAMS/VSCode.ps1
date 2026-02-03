@@ -41,14 +41,7 @@
     }
     }
 
-
-$apiUrl = "https://api.github.com/repos/Flowseal/zapret-discord-youtube/releases/latest"
-$releaseInfo = Invoke-RestMethod -Uri $apiUrl -UseBasicParsing
-$asset = $releaseInfo.assets | Where-Object { $_.name -like "*.rar" } | Select-Object -First 1
-$downloadUrl = $asset.browser_download_url
-
-
 Clear-Host
-Write-Host "Installing: Zapret . . ."
-Get-FileFromWeb -URL $downloadUrl -File "$env:TEMP\zapret.rar"
-Start-Process "$env:TEMP\zapret.rar"
+Write-Host "Installing: Visual Studio Code . . ."
+Get-FileFromWeb -URL "https://vscode.download.prss.microsoft.com/dbazure/download/stable/c9d77990917f3102ada88be140d28b038d1dd7c7/VSCodeUserSetup-x64-1.108.2.exe" -File "$env:TEMP\Visual Studio Code.exe"
+Start-Process "$env:TEMP\Visual Studio Code.exe"

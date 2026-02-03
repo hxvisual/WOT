@@ -41,14 +41,7 @@
     }
     }
 
-
-$apiUrl = "https://api.github.com/repos/Flowseal/zapret-discord-youtube/releases/latest"
-$releaseInfo = Invoke-RestMethod -Uri $apiUrl -UseBasicParsing
-$asset = $releaseInfo.assets | Where-Object { $_.name -like "*.rar" } | Select-Object -First 1
-$downloadUrl = $asset.browser_download_url
-
-
 Clear-Host
-Write-Host "Installing: Zapret . . ."
-Get-FileFromWeb -URL $downloadUrl -File "$env:TEMP\zapret.rar"
-Start-Process "$env:TEMP\zapret.rar"
+Write-Host "Installing: Git . . ."
+Get-FileFromWeb -URL "https://release-assets.githubusercontent.com/github-production-release-asset/23216272/6bb4833a-507b-49e5-8490-e79102763cfc?sp=r&sv=2018-11-09&sr=b&spr=https&se=2026-02-03T16%3A52%3A55Z&rscd=attachment%3B+filename%3DGit-2.53.0-64-bit.exe&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-02-03T15%3A52%3A31Z&ske=2026-02-03T16%3A52%3A55Z&sks=b&skv=2018-11-09&sig=6vfOI4Q1uGXSCRGr7eAx7mSBTvxs3LNe3lRIQmt5aeg%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc3MDEzNzE2OSwibmJmIjoxNzcwMTM1MzY5LCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.3YcHK-djVG6vYqQW3YrKOfVULZqkVb9nHR3pfkuDZlE&response-content-disposition=attachment%3B%20filename%3DGit-2.53.0-64-bit.exe&response-content-type=application%2Foctet-stream" -File "$env:TEMP\Git.exe"
+Start-Process "$env:TEMP\Git.exe"
