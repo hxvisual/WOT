@@ -9,12 +9,14 @@ init(autoreset=True)
 
 PATH = os.path.dirname(os.path.abspath(__file__))
 
-ELEMENT_MENU = 3
+ELEMENT_MENU = 5
 ACTIVE = False
 
 ELEMENTS = [
 	[Fore.BLUE + "Установить Windows 10", 						f"{PATH}/PROGRAMS/Reinstall 1.ps1"],
 	[Fore.BLUE + "Установить Windows 11", 						f"{PATH}/PROGRAMS/Reinstall 2.ps1"],
+	[Fore.RED + "Драйвер Ethernet", 							f"{PATH}/PROGRAMS/ethernet.ps1"],
+	[Fore.RED + "Драйвер Wi-Fi", 								f"{PATH}/PROGRAMS/wifi.ps1"],
 	[Fore.GREEN + "Установить zapret\n", 						f"{PATH}/PROGRAMS/zapret.ps1"],
 	["1. Google Chrome", 										f"{PATH}/PROGRAMS/Google Chrome.ps1"],
 	["2. Discord", 												f"{PATH}/PROGRAMS/Discord.ps1"],
