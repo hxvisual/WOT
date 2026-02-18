@@ -1127,4 +1127,5 @@ schtasks /Change /DISABLE /TN "\Microsoft\Windows\Defrag\ScheduledDefrag" | Out-
 # import reg file
 Regedit.exe /S "$env:TEMP\Registry Optimize.reg"
 Clear-Host
-exit
+
+shutdown -r -t 00

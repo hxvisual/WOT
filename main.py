@@ -12,13 +12,14 @@ init(autoreset=True)
 
 PATH = os.path.dirname(os.path.abspath(__file__))
 
-ELEMENT_MENU = 2
+ELEMENT_MENU = 3
 ACTIVE = False
 LATEST_VERSION = True
 
 ELEMENTS = [
 	[Fore.RED + "Разрешить скрипты (при первом запуске!)\n", 				[f"{PATH}/TWEAKS/Allow Scripts.cmd", f"{PATH}/TWEAKS/ps/UAC.ps1"]],
 
+	[Fore.GREEN + "Активация Windows/Office", 								[f"{PATH}/TWEAKS/ps/Activation.ps1"]],
 	[Fore.GREEN + "Установка программ\n", 									[f"{PATH}/TWEAKS/wpi.exe"]],
 
 
@@ -31,7 +32,7 @@ ELEMENTS = [
 
 	["7. Удаление драйверов видеокарты", 									[f"{PATH}/TWEAKS/ps/Clean Driver.ps1"], True],
 	["8. Установка драйвера для видеокарты " + Fore.RED + "AMD", 			[f"{PATH}/TWEAKS/ps/Amd Driver.ps1"], True],
-	["9. Настройки для видеокарты " + Fore.RED + "AMD", 					[f"{PATH}/TWEAKS/Amd Settings.txt"]],
+	["9. Настройки для видеокарты " + Fore.RED + "AMD", 					[f"{PATH}/TWEAKS/Amd Settings.png"]],
 	["10. Установка драйвера для видеокарты " + Fore.GREEN + "NVIDIA", 		[f"{PATH}/TWEAKS/ps/Nvidia Driver.ps1"], True],
 	["11. Настройки для видеокарты " + Fore.GREEN + "NVIDIA", 				[f"{PATH}/TWEAKS/ps/Nvidia Settings.ps1"], True],
 
@@ -39,7 +40,7 @@ ELEMENTS = [
 	["13. VC++", 															[f"{PATH}/TWEAKS/ps/VC++.ps1"], True],
 	["14. Отключить изоляцию ядра", 										[f"{PATH}/TWEAKS/sc/Core Isolation.url"]],
 	["15. Удалить Edge", 													[f"{PATH}/TWEAKS/ps/Edge.ps1"]],
-	["16. Удалить мусор из Windows", 										[f"{PATH}/TWEAKS/ps/Bloatware.ps1"]],
+	["16. Удалить мусор из Windows", 										[f"{PATH}/TWEAKS/ps/Bloatware.ps1"], True],
 	["17. Настройки реестра", 												[f"{PATH}/TWEAKS/ps/Background Apps.ps1", f"{PATH}/TWEAKS/ps/Gamebar.ps1", f"{PATH}/TWEAKS/ps/Msi Mode.ps1", f"{PATH}/TWEAKS/ps/Start Menu Taskbar Clean.ps1", f"{PATH}/TWEAKS/ps/Copilot.ps1", f"{PATH}/TWEAKS/ps/Widgets.ps1", f"{PATH}/TWEAKS/ps/Power Plan.ps1", f"{PATH}/TWEAKS/ps/Timer Resolution.ps1", f"{PATH}/TWEAKS/ps/Signout Lockscreen.ps1", f"{PATH}/TWEAKS/ps/Mpo.ps1", f"{PATH}/TWEAKS/ps/Fso.ps1", f"{PATH}/TWEAKS/ps/Registry.ps1"]],
 	["18. Отключить точку восстановления", 									[f"{PATH}/TWEAKS/sc/Restore Point.lnk"]],
 	["19. " + Fore.GREEN + "NVIDIA HDCP", 									[f"{PATH}/TWEAKS/ps/Hdcp.ps1"]],
@@ -48,6 +49,7 @@ ELEMENTS = [
 	["22. Отключить защиту Windows (Шаг 1)", 								[f"{PATH}/TWEAKS/ps/Security 1.ps1"]],
 	["23. Отключить защиту Windows (Шаг 2 В безопасном режиме)", 			[f"{PATH}/TWEAKS/ps/Security 2.ps1"]],
 	["24. Очистить диск", 													[f"{PATH}/TWEAKS/ps/Cleanup.ps1"]],
+	["25. Microsoft Store", 												[f"{PATH}/TWEAKS/sc/Store Updates.url"]],
 ]
 
 def clear_console():
@@ -140,9 +142,13 @@ def run():
 				if key == b"w" or key == b"W":
 					if ELEMENT_MENU > 0:
 						ELEMENT_MENU -= 1
+					else:
+						continue
 				elif key == b"s" or key == b"S":
 					if ELEMENT_MENU < len(ELEMENTS) - 1:
 						ELEMENT_MENU += 1
+					else:
+						continue
 				elif key == b"\r":
 					try:
 						start_script(ELEMENTS[ELEMENT_MENU][1], ELEMENTS[ELEMENT_MENU][2])
