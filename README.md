@@ -2,7 +2,7 @@
 <div align="center">
 
 # ⚡ Windows Optimization Tool ⚡
-[![Version](https://img.shields.io/badge/version-1.0.0-green.svg)](https://github.com/hxvisual/wot/releases)
+[![Version](https://img.shields.io/badge/version-1.1.1-green.svg)](https://github.com/hxvisual/wot/releases)
 [![Windows](https://img.shields.io/badge/platform-Windows%2010%2F11-green.svg)](https://www.microsoft.com/windows)
 
 </div>
